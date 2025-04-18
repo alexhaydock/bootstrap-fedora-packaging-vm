@@ -4,8 +4,8 @@
   block:
     - name: Import VS Code signing key
       ansible.builtin.rpm_key:
-      state: present
-      key: https://packages.microsoft.com/keys/microsoft.asc
+        state: present
+        key: https://packages.microsoft.com/keys/microsoft.asc
 
     - name: Enable VS Code repo
       ansible.builtin.copy:
