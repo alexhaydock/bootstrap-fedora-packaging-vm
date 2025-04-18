@@ -10,6 +10,7 @@ packages_general_packages:
   - binwalk
   - fedora-packager
   - git
+  - gnome-builder
   - htop
   - pre-commit
   - python3-psutil  # Required to set GNOME options with dconf using Ansible
