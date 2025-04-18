@@ -1,0 +1,12 @@
+---
+- name: Install and remove wanted/unwanted packages
+  become: true
+  block:
+    - name: Update all packages
+      ansible.builtin.dnf5:
+        update_cache: true
+        name: "*"
+        state: latest
+      tags:
+        - skip_ansible_lint  # ansible-lint doesn't like the use of 'latest' for package installs
+...

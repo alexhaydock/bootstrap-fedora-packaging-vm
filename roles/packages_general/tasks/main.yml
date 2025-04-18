@@ -1,0 +1,10 @@
+---
+- name: Install and remove wanted/unwanted packages
+  become: true
+  block:
+    - name: Install general packageset
+      ansible.builtin.dnf5:
+        update_cache: true
+        name: '{{ packages_general_packages }}'
+        state: present
+...

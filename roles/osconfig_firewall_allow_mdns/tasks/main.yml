@@ -1,0 +1,9 @@
+---
+- name: Allow mDNS replies to come into our host so we can use things like Printers and Chromecasts
+  become: true
+  ansible.posix.firewalld:
+    service: mdns
+    permanent: true
+    immediate: true
+    state: enabled
+...

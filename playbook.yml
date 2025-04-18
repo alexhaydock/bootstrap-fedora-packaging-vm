@@ -1,0 +1,19 @@
+---
+- name: Bootstrap Fedora Packaging Workstation
+  hosts: local
+  gather_facts: true
+
+  roles:
+    ### osconfig ###
+    - osconfig_firewall_base
+    - osconfig_firewall_allow_mdns
+    - osconfig_disable_root_user
+
+    ### packages ###
+    - packages_upgrade
+    - packages_general
+    - packages_vscode
+
+    ### user-level config ###
+    - appconf_gnome  # Needs to come after the packages section as it depends on us installing python3-psutil to work
+...

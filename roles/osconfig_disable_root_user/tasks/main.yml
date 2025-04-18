@@ -1,0 +1,8 @@
+---
+- name: Disable root user
+  become: true
+  ansible.builtin.user:
+    name: root
+    password: '!'
+    password_lock: true
+...

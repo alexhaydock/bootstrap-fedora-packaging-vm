@@ -1,0 +1,31 @@
+---
+- name: Enable VS Code repo and install
+  become: true
+  block:
+    - name: Import VS Code signing key
+      ansible.builtin.rpm_key:
+      state: present
+      key: https://packages.microsoft.com/keys/microsoft.asc
+
+    - name: Enable VS Code repo
+      ansible.builtin.copy:
+        content: |
+          [code]
+          name=Visual Studio Code
+          baseurl=https://packages.microsoft.com/yumrepos/vscode
+          enabled=1
+          autorefresh=1
+          type=rpm-md
+          gpgcheck=1
+          gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+        dest: /etc/yum.repos.d/vscode.repo
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Install VS Code package
+      ansible.builtin.dnf5:
+        update_cache: true
+        name: 'code'
+        state: present
+...
