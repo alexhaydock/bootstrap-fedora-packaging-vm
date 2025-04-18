@@ -1,5 +1,5 @@
 ---
-toolbx_packages_general_packages:
+packages_general_packages:
   - ansible
   - ansible-collection-ansible-posix
   - ansible-collection-community-general
