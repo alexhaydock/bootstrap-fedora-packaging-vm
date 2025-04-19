@@ -15,5 +15,6 @@
     - packages_vscode
 
     ### user-level config ###
-    - appconf_gnome  # Needs to come after the packages section as it depends on us installing python3-psutil to work
+    - appconf_gnome  # Needs to come after the packages section as it depends on us installing `python3-psutil` to work
+    - oscconfig_add_user_to_mock_group  # Needs to come after the packages section as we need `mock` installed first
 ...

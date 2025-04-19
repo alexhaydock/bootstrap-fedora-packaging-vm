@@ -1,0 +1,9 @@
+---
+- name: Add current user to `mock` group for package building`
+  become: true
+  ansible.builtin.user:
+    name: '{{ ansible_user }}'
+    append: true
+    groups: 'mock'
+    state: present
+...
