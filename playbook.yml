@@ -8,6 +8,7 @@
     - osconfig_firewall_base
     - osconfig_firewall_allow_mdns
     - osconfig_disable_root_user
+    - osconfig_dnf-automatic
 
     ### packages ###
     - packages_upgrade
